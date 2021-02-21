@@ -1,0 +1,63 @@
+Klasser som kommer att behövas:
+
+Byggs med hjälp av TDD (eftersom detta är model så behåller vi alla tester?)
+
+Interface för unit sådant att det hålls uniformt.
+
+3 Olika enheter. Dom kan vara nästan samma men jag tänker att det dom skiljer sig i är HP, cost och movement speed.
+1 Teleportenhet, denna kommer kunna lägga ut en teleport(jag tänker om trycker på en knapp).
+
+Interface för land sådant att det hålls uniformt. (Speciellt specat interface ska användas här)
+
+Olika typer av land:
+Gräs(Går ej att gå på)
+Stig/väg(Det enda som går att faktiskt gå på)
+T-korsning(Väg som skickar units srand åt olika håll)
+Vatten(hamnar srand på gräs, datorn kan ej bygga här)
+Teleport(Skapar en länk mellan två stigplatser framåt)
+
+Interface för 3 olika typer av torn.
+
+Land laddas via reflection.
+
+Vi använder JAXB för att läsa in kartor. Vi kan ha 2 förbyggda kartor till en början och lägga till någon enstaka.
+
+Interface för Wallet.
+Innhåller all credit, behöver bara vara en simpel klass.
+(Publika increment och decrement metoder, kan direkt kallas av unit-klasserna)
+
+Temporära värden på enheter sätts på allt sedan så balanserar vi programmet när vi fått det fungerande.
+
+En multiplier ställs globalt sådant att räckvidd blir vettigt!
+
+Modelkall ska försöka hållas enkla.
+
+Globala id:n för torn och liknande.
+
+Alla delar måste ha unika id:n också.
+
+-controller sidenote/demand
+a method on the form addUnit(String unit type);
+
+MapParser
+
+Måste ta mått (storlek på banan x,y), samt namn på filen att läsa.
+
+Läser in data från xml.
+Använder reflection för att skapa klasserna utifrån datat,
+dessa klasser måste implementera ett interface (tiles?).
+Sätter datat i WorldRunner.
+
+Våra units summerar totalt hur många pathTiles dom har kvar med eventuella T-korsningar inräknat.
+Vid en T-korsning så räknar vi av den sammanlagda summan av komplementet till den vägen gubben kommer ta.
+
+Unitsorter:
+Unit1
+Unit2
+
+Skickas till View:
+
+public void updateUnitPositions(ArrayList<ObjectPosition> newUnitPositions){
+public void setAttacks(ArrayList<AttackEvents> attackEvents){
+public void update(){
+

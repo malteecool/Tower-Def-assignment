@@ -1,0 +1,20 @@
+Hantering av positioner, beräknas i modell eller gui? -> modell
+Lista skickas till gui med nya positioner, gui jämför med gamla o animerar därimellan?
+- Taggar för olika typer av enheter/torn = Guit visar rätt bild utifrån tagg?
+Torn skjuter?
+- Ska controlern manuellt säga till om varje torn eller ska det "automtiskt" ske i guit? -> controlern säger till
+Listeners i controllern?
+Hantera inladdning av resurser (lista på resurser/resurs-tag skickas från controller til gui?)
+- därefter används resurs-tag för att benämna vilken resurs som ska användas
+
+
+View:
+Gui
+Guibuilder
+Popups (3? New game/Exit, Win, Loss)
+Resource loader
+resource rescaler
+felmeddelande?
+
+
+Kolla på att trycka på enheter / t-korsningar (x/y i listener eventet)
